@@ -26,7 +26,7 @@ export default function Home() {
         data: {
           cast: {
             text: castText,
-            embeds: ["https://dtech.vision"],
+            embeds: ["https://devigtial.com"],
           },
         },
       },
