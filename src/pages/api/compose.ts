@@ -13,7 +13,7 @@ export default function handler(
       type: "form",
       title: "dTech.vision",
       // url: 'http://localhost:3000', // make sure this is your public URL e.g. http://localhost:3000 for local testing
-      url: "https://farcaster-action-composer-example.vercel.app/", // make sure this is your public URL e.g. http://localhost:3000 for local testing
+      url: "https://farcaster-action-composer-example.vercel.app/LinkCard", // make sure this is your public URL e.g. http://localhost:3000 for local testing
     });
   } else if (req.method === "GET") {
     res.status(200).json({
