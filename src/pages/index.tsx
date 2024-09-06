@@ -20,13 +20,32 @@ export default function Home() {
     const castText = `My favorite ice cream flavors🍦 are: ${first}, ${second}, ${third} and I love being able to use Cast Composer Actions built by dTech for my business!`;
 
     console.log({ castText });
+    const htmlContent = `
+    <html>
+      <head>
+        <style>
+          body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+          }
+          h1 {
+            color: #333;
+          }
+        </style>
+      </head>
+      <body>
+        <h1>Hello from the iframe!</h1>
+        <p>This is some HTML content inside an iframe.</p>
+      </body>
+    </html>
+  `;
     window.parent.postMessage(
       {
         type: "createCast",
         data: {
           cast: {
             text: castText,
-            embeds: ["https://devigital.com/"],
+            embeds: [htmlContent],
           },
         },
       },
