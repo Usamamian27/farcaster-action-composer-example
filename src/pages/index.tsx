@@ -17,35 +17,19 @@ export default function Home() {
 
   const handleShare = () => {
     const [first, second, third] = selectedFlavors;
-    const castText = `My favorite ice cream flavors🍦 are: ${first}, ${second}, ${third} and I love being able to use Cast Composer Actions built by dTech for my business!`;
+    const castText = `My favorite ice cream flavors🍦 are: ${first}, ${second}, ${third} and I love being able to use Cast Composer Actions!`;
 
     console.log({ castText });
-    const htmlContent = `
-    <html>
-      <head>
-        <style>
-          body {
-            font-family: Arial, sans-serif;
-            background-color: #f0f0f0;
-          }
-          h1 {
-            color: #333;
-          }
-        </style>
-      </head>
-      <body>
-        <h1>Hello from the iframe!</h1>
-        <p>This is some HTML content inside an iframe.</p>
-      </body>
-    </html>
-  `;
+
     window.parent.postMessage(
       {
         type: "createCast",
         data: {
           cast: {
             text: castText,
-            embeds: [htmlContent],
+            embeds: [
+              "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTWNF7BVSwwygreRI3UUjoxt_V1Q1BAIPRXEQ&s",
+            ],
           },
         },
       },
@@ -135,7 +119,6 @@ export default function Home() {
         </div>
       </div>
       <div className="mb-32 grid text-center lg:max-w-5xl lg:w-full lg:mb-0 lg:grid-cols-4 lg:text-left">
-        <p>Hello main test?</p>
         <button
           className="px-4 py-2 text-white bg-blue-500 rounded-md shadow-md hover:bg-blue-600"
           onClick={handleShare}

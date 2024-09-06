@@ -19,23 +19,25 @@ const LinkInputCard = () => {
     setSubmittedLinks(validLinks);
   };
 
-  //   const handleShare = () => {
-  //     const castText = `My favorite links are`;
+  const handleShare = () => {
+    const castText = `My favorite links are`;
 
-  //     console.log({ castText });
-  //     window.parent.postMessage(
-  //       {
-  //         type: "createCast",
-  //         data: {
-  //           cast: {
-  //             text: castText,
-  //             embeds: ["https://devigital.com/"],
-  //           },
-  //         },
-  //       },
-  //       "*"
-  //     );
-  //   };
+    console.log({ castText });
+    window.parent.postMessage(
+      {
+        type: "createCast",
+        data: {
+          cast: {
+            text: castText,
+            embeds: [
+              "https://cdn.dribbble.com/users/192882/screenshots/4659605/dribbble-animation.gif",
+            ],
+          },
+        },
+      },
+      "*"
+    );
+  };
 
   return (
     <>
@@ -95,6 +97,15 @@ const LinkInputCard = () => {
             ))}
           </div>
         )}
+      </div>
+      <div style={{ textAlign: "center", marginTop: "15px" }}>
+        <button
+          className="px-4 py-2 text-white bg-blue-500 rounded-md shadow-md hover:bg-blue-600"
+          onClick={handleShare}
+          disabled={submittedLinks.length < 1}
+        >
+          Share on Farcaster
+        </button>
       </div>
     </>
   );
