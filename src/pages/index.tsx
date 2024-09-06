@@ -20,7 +20,6 @@ export default function Home() {
     const castText = `My favorite ice cream flavors🍦 are: ${first}, ${second}, ${third} and I love being able to use Cast Composer Actions!`;
 
     console.log({ castText });
-
     window.parent.postMessage(
       {
         type: "createCast",
