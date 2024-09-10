@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import styles from "./styles.module.css";
+import Mint from "@/components/CrossmintPaymentButton";
 
 const LinkInputCard = () => {
   const [links, setLinks] = useState({ link1: "", link2: "", link3: "" });
@@ -106,6 +107,10 @@ const LinkInputCard = () => {
         >
           Share on Farcaster
         </button>
+      </div>
+
+      <div>
+        <Mint />
       </div>
     </>
   );
